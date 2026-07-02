@@ -9,7 +9,7 @@ import type {
 export class Itoc360Api implements ICredentialType {
 	name = 'itoc360Api';
 
-	displayName = 'Itoc360 API';
+	displayName = 'ITOC360 API';
 
 	documentationUrl = 'https://docs.itoc360.com';
 
@@ -17,13 +17,13 @@ export class Itoc360Api implements ICredentialType {
 
 	properties: INodeProperties[] = [
 		{
-			displayName: 'Webhook Base URL',
+			displayName: 'Webhook URL',
 			name: 'baseUrl',
 			type: 'string',
-			default: 'https://api.itoc360.com/functions/v1/events',
+			default: 'https://api.itoc360.app/functions/v1/events',
 			required: true,
 			description:
-				'The itoc360 events endpoint. Copy it from your itoc360 source configuration (the URL you send alerts to).',
+				'The ITOC360 events endpoint. Copy it from your ITOC360 source configuration (the URL you send alerts to).',
 		},
 		{
 			displayName: 'Source Token',
@@ -33,7 +33,7 @@ export class Itoc360Api implements ICredentialType {
 			default: '',
 			required: true,
 			description:
-				'The token for your itoc360 n8n source. Create an n8n source in itoc360 and copy its token here.',
+				'The token for your ITOC360 n8n source. Create an n8n source in ITOC360 and copy its token here.',
 		},
 	];
 
