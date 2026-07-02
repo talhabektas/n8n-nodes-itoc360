@@ -1,6 +1,6 @@
 {
   "name": "@itservtechnology/n8n-nodes-itoc360",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "n8n community node to send alerts to itoc360 alert routing and on-call management",
   "license": "MIT",
   "homepage": "https://itoc360.com",
