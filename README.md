@@ -45,8 +45,7 @@ To use this node you need an ITOC360 account with an n8n source:
 
 ## Compatibility
 
-Requires n8n 2.x with community nodes enabled. Built and tested with Node.js 22+.
-
+Tested with n8n 2.28.5 and Node.js 22+.
 ## Usage
 
 Add the **ITOC360** node to a workflow, select **Send Alert**, and fill in the title, host, and severity. When the workflow runs, the alert appears in ITOC360 and is routed according to your escalation policy. Use **Resolve Alert** with the same title, host, and source to close it.
