@@ -6,21 +6,22 @@ import type {
 	IHttpRequestMethods,
 	IHttpRequestOptions,
 	IDataObject,
+	JsonObject,
 } from 'n8n-workflow';
-import { NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
+import { NodeConnectionTypes, NodeApiError } from 'n8n-workflow';
 
 export class Itoc360 implements INodeType {
 	description: INodeTypeDescription = {
-		displayName: 'itoc360',
+		displayName: 'ITOC360',
 		name: 'itoc360',
 		icon: { light: 'file:itoc360.svg', dark: 'file:itoc360.dark.svg' },
 		group: ['output'],
 		version: 1,
 		subtitle: '={{$parameter["operation"]}}',
-		description: 'Send alert and resolve events to itoc360',
+		description: 'Send alert and resolve events to ITOC360',
 		usableAsTool: true,
 		defaults: {
-			name: 'itoc360',
+			name: 'ITOC360',
 		},
 		inputs: [NodeConnectionTypes.Main],
 		outputs: [NodeConnectionTypes.Main],
@@ -40,13 +41,13 @@ export class Itoc360 implements INodeType {
 					{
 						name: 'Resolve Alert',
 						value: 'resolve',
-						description: 'Resolve an existing alert in itoc360',
+						description: 'Resolve an existing alert in ITOC360',
 						action: 'Resolve an alert',
 					},
 					{
 						name: 'Send Alert',
 						value: 'alert',
-						description: 'Trigger a new alert in itoc360',
+						description: 'Trigger a new alert in ITOC360',
 						action: 'Send an alert',
 					},
 				],
@@ -173,7 +174,7 @@ export class Itoc360 implements INodeType {
 					});
 					continue;
 				}
-				throw new NodeOperationError(this.getNode(), error as Error, { itemIndex: i });
+				throw new NodeApiError(this.getNode(), error as JsonObject, { itemIndex: i });
 			}
 		}
 
